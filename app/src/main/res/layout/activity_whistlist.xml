@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingTop="30dp"
+    tools:context=".activities.WishlistActivity">
+
+    <EditText
+        android:id="@+id/edWhistlistTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/outline_rectangle"
+        android:hint="Nama Tempat"
+        android:maxLines="3"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/etWhistlistDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/outline_rectangle"
+        android:gravity="top"
+        android:hint="Deskripsi Tempat"
+        android:minLines="5"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnAddWhistlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah" />
+
+    <Button
+        android:id="@+id/btnUpdateWhistlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ubah" />
+
+    <Button
+        android:id="@+id/btnDeleteWhistlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:text="Delete" />
+
+</LinearLayout>

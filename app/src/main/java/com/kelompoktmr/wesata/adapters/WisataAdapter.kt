@@ -13,7 +13,8 @@ import com.kelompoktmr.wesata.R
 import com.kelompoktmr.wesata.dataclass.WisataData
 
 
-class WisataAdapter(val wisataArrayList: ArrayList<WisataData>): RecyclerView.Adapter<WisataAdapter.ViewHolderClass> () {
+class WisataAdapter(val wisataArrayList: ArrayList<WisataData>) :
+    RecyclerView.Adapter<WisataAdapter.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_wisata, parent, false)
@@ -31,14 +32,14 @@ class WisataAdapter(val wisataArrayList: ArrayList<WisataData>): RecyclerView.Ad
         Glide.with(holder.itemView.context).load(currentItem.Image).into(holder.image);
 
         val idWisata = currentItem.id.toString()
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailDestinationActivity::class.java)
             intent.putExtra("idWisata", idWisata)
             holder.itemView.context.startActivity(intent)
         }
     }
 
-    inner class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvWisataItemTitle)
         val description: TextView = itemView.findViewById(R.id.tvWisataItemDescription)
         val image: ImageView = itemView.findViewById(R.id.ivWisataItem)

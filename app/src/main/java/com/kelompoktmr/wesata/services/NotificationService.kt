@@ -34,7 +34,7 @@ class NotificationService : Service() {
     }
 
     private fun startWebSocket() {
-        val  serverUri = "ws://${Host.URL.url}/ws/notification/"
+        val serverUri = "ws://${Host.URL.url}/ws/notification/"
 
         val client = OkHttpClient.Builder()
             .readTimeout(0, TimeUnit.MILLISECONDS) // Infinite timeout for reading frames
@@ -75,7 +75,9 @@ class NotificationService : Service() {
 
         with(NotificationManagerCompat.from(this)) {
             if (ActivityCompat.checkSelfPermission(
-                    applicationContext, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                    applicationContext, Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
                 return
             }
             notify(NOTIFICATION_ID, builder.build())

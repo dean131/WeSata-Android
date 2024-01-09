@@ -29,30 +29,33 @@ class MainActivity : AppCompatActivity() {
         startService(notificationService)
 
         val fragmenIntent = intent.getStringExtra("frag").toString()
-        Log.d("FRAGCUY", fragmenIntent)
         when (fragmenIntent) {
             "notificationFragment" -> setFragment(NotificationsFragment())
             else -> setFragment(HomeFragment())
         }
 
         binding.bottomNavigation.setOnItemSelectedListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.navigation_home -> {
                     setFragment(HomeFragment())
                     true
                 }
+
                 R.id.navigation_notifications -> {
                     setFragment(NotificationsFragment())
                     true
                 }
+
                 R.id.navigation_settings -> {
                     setFragment(SettingsFragment())
                     true
                 }
+
                 R.id.navigation_whistlist -> {
                     setFragment(WishlistFragment())
                     true
                 }
+
                 else -> false
             }
         }

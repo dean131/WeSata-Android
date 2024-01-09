@@ -27,24 +27,29 @@ class SettingsFragment : Fragment() {
             val popupMenu = PopupMenu(context, binding.cvContactAdmin)
             popupMenu.inflate(R.menu.contact_menu)
             popupMenu.setOnMenuItemClickListener {
-                when(it.itemId) {
+                when (it.itemId) {
                     R.id.email -> {
                         val intent = Intent(activity, EmailActivity::class.java)
                         startActivity(intent)
                         true
                     }
+
                     R.id.sms -> {
                         val intent = Intent(activity, SMSActivity::class.java)
                         startActivity(intent)
                         true
                     }
+
                     R.id.call -> {
                         val tel_number = "085720858102"
                         val intentCall = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + tel_number))
                         startActivity(intentCall)
                         true
                     }
-                    else -> {false}
+
+                    else -> {
+                        false
+                    }
                 }
             }
             popupMenu.show()

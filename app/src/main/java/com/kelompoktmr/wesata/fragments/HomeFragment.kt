@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     }
 
     fun loadData() {
-        dataWisata = ArrayList<WisataData> ()
+        dataWisata = ArrayList<WisataData>()
 
         AndroidNetworking.get("http://${Host.URL.url}/api/destinations")
             .setPriority(Priority.HIGH)
@@ -57,7 +57,6 @@ class HomeFragment : Fragment() {
                     // handle error
                 }
             })
-
 
 
     }

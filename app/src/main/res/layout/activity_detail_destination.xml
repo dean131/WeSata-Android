@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".activities.DetailDestinationActivity">
 
-
     <ImageView
         android:id="@+id/ivDetailDestination"
         android:layout_width="match_parent"
@@ -28,8 +27,8 @@
         android:id="@+id/tvDetailDestinationDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:justificationMode="inter_word"
+        android:padding="10dp"
         android:text="Description" />
 
     <LinearLayout
@@ -39,18 +38,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/btnDetailDestinationMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Lihat Peta" />
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/btnDetailDestinationWeb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="Lihat Web" />
 
     </LinearLayout>

@@ -29,7 +29,7 @@ class DetailDestinationActivity : AppCompatActivity() {
 
         loadData()
 
-        binding.btnDetailDestinationMap.setOnClickListener{
+        binding.btnDetailDestinationMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
             intent.putExtra("latitude", latitude)
             intent.putExtra("longitude", longitude)

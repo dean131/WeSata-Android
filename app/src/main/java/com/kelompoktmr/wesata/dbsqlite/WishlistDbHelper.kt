@@ -8,7 +8,8 @@ import android.provider.BaseColumns
 import com.kelompoktmr.wesata.dataclass.WishlistData
 
 
-class WishlistDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class WishlistDbHelper(context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     val TABLE_NAME = "entry"
     val COLUMN_NAME_TITLE = "title"
     val COLUMN_NAME_SUBTITLE = "subtitle"
@@ -24,13 +25,16 @@ class WishlistDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
     }
+
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL(SQL_DELETE_ENTRIES)
         onCreate(db)
     }
+
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         onUpgrade(db, oldVersion, newVersion)
     }
+
     companion object {
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "FeedReader.db"
@@ -61,7 +65,7 @@ class WishlistDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
             null               // The sort order
         )
 
-        val dataWishlist = ArrayList<WishlistData> ()
+        val dataWishlist = ArrayList<WishlistData>()
         with(cursor) {
             while (moveToNext()) {
                 val whislistId = getLong(getColumnIndexOrThrow(BaseColumns._ID))
@@ -96,6 +100,7 @@ class WishlistDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
             TABLE_NAME,
             values,
             selection,
-            selectionArgs)
+            selectionArgs
+        )
     }
 }

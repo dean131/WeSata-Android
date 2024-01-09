@@ -34,7 +34,7 @@ class NotificationsFragment : Fragment() {
     }
 
     fun loadData() {
-        dataNotif = ArrayList<NotificationData> ()
+        dataNotif = ArrayList<NotificationData>()
 
         AndroidNetworking.get("http://${Host.URL.url}/api/notifications")
             .setPriority(Priority.HIGH)

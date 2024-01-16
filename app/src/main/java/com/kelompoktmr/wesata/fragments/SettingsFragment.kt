@@ -11,6 +11,7 @@ import android.widget.PopupMenu
 import com.kelompoktmr.wesata.activities.EmailActivity
 import com.kelompoktmr.wesata.activities.SMSActivity
 import com.kelompoktmr.wesata.R
+import com.kelompoktmr.wesata.activities.EditProfileActivity
 import com.kelompoktmr.wesata.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -22,6 +23,11 @@ class SettingsFragment : Fragment() {
     ): View? {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        binding.cvEditProfile.setOnClickListener {
+            val intent = Intent(activity, EditProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.cvContactAdmin.setOnClickListener {
             val popupMenu = PopupMenu(context, binding.cvContactAdmin)

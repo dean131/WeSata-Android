@@ -26,9 +26,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.WishlistActivity"
+            android:name=".activities.EditProfileActivity"
             android:exported="false"
             android:parentActivityName=".activities.MainActivity"/>
+        <activity
+            android:name=".activities.WishlistActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
 
         <service
             android:name=".services.NotificationService"

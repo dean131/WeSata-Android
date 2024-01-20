@@ -40,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -55,5 +54,4 @@ dependencies {
     implementation("com.amitshekhar.android:android-networking:1.0.2")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
-
 }
